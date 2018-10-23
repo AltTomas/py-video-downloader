@@ -2,44 +2,46 @@ import youtube_dl
 from colorama import init
 from blessings import Terminal
 
-t = Terminal()
 
-ydl_only_audio_opts = {
-    'format': 'bestaudio/best',
-    'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'mp3',
-        'preferredquality': '192',
-    }],
-}
 
-print(t.bold_yellow('Bienvenido! Este programa sirve para descargar videos de distintos lugares'))
-print(t.bold_yellow('Solo seguí las instrucciones!'))
+# t = Terminal()
 
-url = input(t.bold('Ingresa la URL (link) del video: '))
+# ydl_only_audio_opts = {
+#     'format': 'bestaudio/best',
+#     'postprocessors': [{
+#         'key': 'FFmpegExtractAudio',
+#         'preferredcodec': 'mp3',
+#         'preferredquality': '192',
+#     }],
+# }
 
-username = input(t.bold('Usuario (En caso que tengas que logearte, ej: una playlist privada de YT, si no, dejalo en blanco: '))
-password = input(t.bold('Contraseña (Si no agregaste usuario, dejalo en blanco)'))
+# print(t.bold_yellow('Bienvenido! Este programa sirve para descargar videos de distintos lugares'))
+# print(t.bold_yellow('Solo seguí las instrucciones!'))
 
-video_name = input(t.bold('Nombre (dejalo en blanco para el default)'))
+# url = input(t.bold('Ingresa la URL (link) del video: '))
 
-only_audio = input(t.bold('Solo audio? (s/n)'))
+# username = input(t.bold('Usuario (En caso que tengas que logearte, ej: una playlist privada de YT, si no, dejalo en blanco: '))
+# password = input(t.bold('Contraseña (Si no agregaste usuario, dejalo en blanco)'))
 
-if video_name is '':
-    video_name = '%(id)s%(ext)s'
+# video_name = input(t.bold('Nombre (dejalo en blanco para el default)'))
 
-if only_audio is 's':
+# only_audio = input(t.bold('Solo audio? (s/n)'))
 
-with ydl:
-    result = ydl.extract_info(url)
+# if video_name is '':
+#     video_name = '%(id)s%(ext)s'
 
-if 'entries' in result:
-    # Can be a playlist or a list of videos
-    video = result['entries'][3]
-else:
-    # Just a video
-    video = result
+# if only_audio is 's':
 
-print(video)
-video_url = video['webpage_url']
-print(video_url)
+# with ydl:
+#     result = ydl.extract_info(url)
+
+# if 'entries' in result:
+#     # Can be a playlist or a list of videos
+#     video = result['entries'][3]
+# else:
+#     # Just a video
+#     video = result
+
+# print(video)
+# video_url = video['webpage_url']
+# print(video_url)
